@@ -15,6 +15,15 @@ public class TV {
     private int volume;
     private boolean power;
 
+    public TV(int channel, int volume, boolean power) {
+        this.channel = channel;
+        this.volume = volume;
+        this.power = power;
+    }
+
+    public TV() {
+    }
+
     public int getChannel() {
         return channel;
     }

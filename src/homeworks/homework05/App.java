@@ -15,18 +15,15 @@ public class App {
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < tv.length; i++) {
             System.out.println(i + 1 + "-й телевизор: ");
-            tv[i] = new TV();
             System.out.print("Enter channel: ");
             int chan = sc.nextInt();
-            tv[i].setChannel(chan);
             System.out.print("Enter volume: ");
             int vol = sc.nextInt();
-            tv[i].setVolume(vol);
             System.out.print("Enter status power: ");
             boolean pwr = sc.nextBoolean();
-            tv[i].setPower(pwr);
+            tv[i] = new TV(chan, vol, pwr);
         }
-        System.out.println("Ваши телевизоры: ")
+        System.out.println("Ваши телевизоры: ");
         for (int i = 0; i < tv.length; i++) {
             System.out.println((i + 1) + ". " + tv[i].toString());
         }
