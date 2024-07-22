@@ -1,4 +1,4 @@
-package homework.homework4.zadacha2;
+package homeworks.homework04.zadacha2;
 
 import java.util.Random;
 import java.util.Scanner;

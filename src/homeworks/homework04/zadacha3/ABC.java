@@ -1,4 +1,4 @@
-package homework.homework4.zadacha3;
+package homeworks.homework04.zadacha3;
 
 import java.util.Arrays;
 import java.util.Scanner;
