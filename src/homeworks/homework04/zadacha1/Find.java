@@ -1,4 +1,4 @@
-package homework.homework4.zadacha1;
+package homeworks.homework04.zadacha1;
 
 public class Find {
     private char t;

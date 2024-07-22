@@ -1,4 +1,4 @@
-package homework.homework3;
+package homeworks.homework03;
 
 public class TV {
     protected String brand;
