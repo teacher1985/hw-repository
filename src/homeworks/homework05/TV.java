@@ -39,9 +39,7 @@ public class TV {
         this.power = power;
     }
 
-    /*
-    Добавить в класс Телевизор методы equals и hashcode.
-     */
+    // Добавить в класс Телевизор методы equals и hashcode.
 
     @Override
     public boolean equals(Object o) {
@@ -56,10 +54,7 @@ public class TV {
         return Objects.hash(channel, volume, power);
     }
 
-    /*
-    Переопределить метод toString класса Телевизор таким образом, чтобы
-    распечатывались: название класса, все поля класса и их значения.
-    */
+    // Переопределить метод toString класса Телевизор таким образом, чтобы распечатывались: название класса, все поля класса и их значения.
 
     @Override
     public String toString() {
