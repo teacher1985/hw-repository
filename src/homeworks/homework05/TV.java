@@ -1,35 +1,46 @@
 package homeworks.homework05;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class TV {
-
-    /*
-    1. В класс Телевизор добавить поля (если не были добавлены ранее):
-    1) Номер включенного канала — integer;
-    2) Громкость звука — integer (от 0 до 100);
-    3) Признак включенного телевизора — boolean.
-    */
-
-    private int channel;
+    private Channel channel;
     private int volume;
     private boolean power;
-
-    public TV(int channel, int volume, boolean power) {
-        this.channel = channel;
-        this.volume = volume;
-        this.power = power;
-    }
+    private List<Channel> channels;
 
     public TV() {
+        this.channels = new ArrayList<>();
     }
 
-    public int getChannel() {
+    public TV(Channel chan, int vlm, boolean pwr) {
+        this.channel = chan;
+        this.volume = vlm;
+        this.power = pwr;
+        this.channels = new ArrayList<>();
+    }
+
+    public Channel getChannel() {
         return channel;
     }
 
-    public void setChannel(int channel) {
+    public void setChannel(Channel channel) {
         this.channel = channel;
+    }
+
+    public void upChannel() {
+        int num = channel.getNumber() + 1;
+        for (Channel chan : channels) {
+            if (num == chan.getNumber()) this.channel = chan;
+        }
+    }
+
+    public void downChannel() {
+        int num = channel.getNumber() - 1;
+        for (Channel chan : channels) {
+            if (num == chan.getNumber()) this.channel = chan;
+        }
     }
 
     public int getVolume() {
@@ -48,22 +59,17 @@ public class TV {
         this.power = power;
     }
 
-    // Добавить в класс Телевизор методы equals и hashcode.
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        TV tv = (TV) o;
-        return channel == tv.channel && volume == tv.volume && power == tv.power;
+    public List<Channel> getChannels() {
+        return channels;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(channel, volume, power);
+    public void setChannels(List<Channel> channels) {
+        this.channels = channels;
     }
 
-    // Переопределить метод toString класса Телевизор таким образом, чтобы распечатывались: название класса, все поля класса и их значения.
+    public void addChannels(Channel ch) {
+        channels.add(ch);
+    }
 
     @Override
     public String toString() {
@@ -72,5 +78,18 @@ public class TV {
                 ", volume=" + volume +
                 ", power=" + power +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TV tv = (TV) o;
+        return volume == tv.volume && power == tv.power && Objects.equals(channel, tv.channel) && Objects.equals(channels, tv.channels);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(channel, volume, power, channels);
     }
 }
