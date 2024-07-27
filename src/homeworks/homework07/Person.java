@@ -21,6 +21,10 @@ public abstract class Person {
     }
 
     public void setPersonName(String personName) {
+        if (personName.isEmpty()) {
+            throw new IllegalArgumentException
+                    ("Имя не может быть пустым");
+        }
         this.personName = personName;
     }
 
@@ -37,6 +41,10 @@ public abstract class Person {
     }
 
     public void setAmountMoney(int amountMoney) {
+        if (amountMoney < 0) {
+            throw new IllegalArgumentException
+                    ("Деньги не могут быть отрицательными");
+        }
         this.amountMoney = amountMoney;
     }
 

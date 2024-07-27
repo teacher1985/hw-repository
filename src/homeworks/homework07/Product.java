@@ -16,6 +16,20 @@ public class Product {
     }
 
     public void setProductName(String productName) {
+        String[] name = new String[10];
+        name[0] = productName.replaceAll("0", "");
+        for (int i = 1; i < name.length; i++) {
+            String k = Integer.toString(i);
+            name[i] = name[i - 1].replaceAll(k, "");
+        }
+        if (name[9].isEmpty()) {
+            throw new IllegalArgumentException
+                    ("Название продукта не должно содержать только цифры");
+        }
+        if (productName.length() < 3) {
+            throw new IllegalArgumentException
+                    ("Название недействительно");
+        }
         this.productName = productName;
     }
 
