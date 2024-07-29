@@ -6,7 +6,7 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) {
-        List<Person> persons = new ArrayList<Person>();
+        List<Person> persons = new ArrayList<>();
         List<Product> products = new ArrayList<>();
         String inputPath = "C:\\Users\\teach\\IdeaProjects\\Homework\\HomeworkProject\\Data.txt";
         try (BufferedReader in = new BufferedReader(new FileReader(inputPath))) {
