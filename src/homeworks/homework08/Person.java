@@ -49,7 +49,7 @@ public class Person {
         } else {
             str = getPersonName() + " не может позволить себе " + product.getProductName();
         }
-        try (Writer writer = new FileWriter("Result.txt", true)) {
+        try (Writer writer = new FileWriter("C:\\Users\\teach\\IdeaProjects\\Homework\\HomeworkProject\\src\\homeworks\\homework08\\Result.txt", true)) {
             writer.write(str + "\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -57,7 +57,7 @@ public class Person {
     }
 
     public void getShoppingCart() {
-        try (Writer writer = new FileWriter("Result.txt", true)) {
+        try (Writer writer = new FileWriter("C:\\Users\\teach\\IdeaProjects\\Homework\\HomeworkProject\\src\\homeworks\\homework08\\Result.txt", true)) {
             writer.write(getPersonName()+ ": " + shoppingCart + "\n");
         } catch (IOException e) {
             throw new RuntimeException(e);

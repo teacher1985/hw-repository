@@ -8,7 +8,7 @@ public class App {
     public static void main(String[] args) {
         List<Person> persons = new ArrayList<>();
         List<Product> products = new ArrayList<>();
-        String inputPath = "C:\\Users\\teach\\IdeaProjects\\Homework\\HomeworkProject\\Data.txt";
+        String inputPath = "C:\\Users\\teach\\IdeaProjects\\Homework\\HomeworkProject\\src\\homeworks\\homework08\\Data.txt";
         try (BufferedReader in = new BufferedReader(new FileReader(inputPath))) {
             int counter = 1;
             String line = in.readLine();
